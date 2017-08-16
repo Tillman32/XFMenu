@@ -8,4 +8,4 @@ Yup, that simple... it works out of the box.
 2. Insert new MainMenuItem model object, inside the MainMenuItems List (MainMenu.xaml.xs).
 3. Wire up another NavigationPage in the same file (MainMenuItem_Selected event handler).
 # More
-Check out my [blog post](https://www.brandontillman.com/xamarin-forms-na…n-slide-out-menu/), and feel free to contact me!
+Check out my [blog post](http://www.brandontillman.com/xamarin-forms-navigation-slide-out-menu/), and feel free to contact me!
