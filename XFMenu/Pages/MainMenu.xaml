@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XFMenu.Pages.MainMenu">
-	<MasterDetailPage.Master>
-        <ContentPage 
-                Icon="hamburger_menu.png" 
-                Title="Menu"
-                BackgroundColor="#616161"> <!-- Menu Title background color -->
-            
-          <!-- Slide out Menu -->
-          <StackLayout VerticalOptions="FillAndExpand">
-                <Label 
-                    Text="XFMenu" 
-                    TextColor="White" 
-                    FontSize="22" 
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" 
-                    Margin="0, 27, 0, 5" />
-                
-                <ListView 
-                        x:Name="MenuListView"
-                        ItemsSource="{Binding MainMenuItems}"
-                        ItemSelected="MainMenuItem_Selected"
-                        VerticalOptions="FillAndExpand" 
-                        SeparatorVisibility="None" 
-                        BackgroundColor="#f5f5f5"> <!-- Menu background color -->
-                  <ListView.ItemTemplate>
-                    <DataTemplate>
-                      <ImageCell 
-                                Text="{Binding Title}" 
-                                ImageSource="{Binding Icon}"
-                                TextColor="Black"/>
-                    </DataTemplate>
-                  </ListView.ItemTemplate>
+    <MasterDetailPage.Master>
+        <ContentPage Icon="hamburger_menu.png" Title="Menu" BackgroundColor="#616161">
+            <!-- Menu Title background color -->
+            <!-- Slide out Menu -->
+            <Grid VerticalOptions="FillAndExpand" RowSpacing="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="9*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" 
+                       Text="XFMenu" 
+                       TextColor="White" 
+                       FontSize="24" 
+                       VerticalOptions="End" 
+                       HorizontalOptions="Center" 
+                       Margin="0, 0, 0, -30" />
+                <ListView Grid.Row="1" 
+                          x:Name="MenuListView" 
+                          ItemsSource="{Binding MainMenuItems}" 
+                          ItemSelected="MainMenuItem_Selected" 
+                          VerticalOptions="FillAndExpand" 
+                          SeparatorVisibility="None" 
+                          HasUnevenRows="true" 
+                          BackgroundColor="#f5f5f5"> <!-- Menu background color -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Title}" 
+                                       ImageSource="{Binding Icon}" 
+                                       TextColor="Black" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
-          </StackLayout>
-            
+            </Grid>
         </ContentPage>
-	</MasterDetailPage.Master>
+    </MasterDetailPage.Master>
 </MasterDetailPage>
